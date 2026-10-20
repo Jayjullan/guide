@@ -1,0 +1,41 @@
+
+<h1>Angular Forms</h1>
+<p>Enter your details below.</p>
+
+<div class="form-card">
+
+  <form (ngSubmit)="submitForm()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput
+             name="name"
+             [(ngModel)]="name"
+             required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput
+             type="email"
+             name="email"
+             [(ngModel)]="email"
+             required
+             email>
+    </mat-form-field>
+
+    <button mat-flat-button type="submit">
+      Submit
+    </button>
+
+  </form>
+
+  @if (submitted) {
+    <div class="result">
+      <h3>Form Submitted!</h3>
+      <p>Name: {{ name }}</p>
+      <p>Email: {{ email }}</p>
+    </div>
+  }
+
+</div>

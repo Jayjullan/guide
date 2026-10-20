@@ -1,0 +1,39 @@
+
+h1 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+p {
+  color: #625b71;
+}
+
+.form-card {
+  background: #f3edf7;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 450px;
+  margin-top: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  border-radius: 100px;
+  height: 48px;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 16px;
+  background: #eaddff;
+  border-radius: 16px;
+}
