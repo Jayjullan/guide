@@ -1,0 +1,21 @@
+<div class="signal-container">
+
+  <h1>Angular Signals</h1>
+  <p>Learn how signals work in Angular.</p>
+
+  <div class="counter-card">
+    <p>Current Count</p>
+    <h2>{{ count() }}</h2>
+
+    <div class="button-group">
+      <button mat-icon-button (click)="decrement()" aria-label="Decrease">
+        <mat-icon>remove</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="increment()" aria-label="Increase">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+
+</div>

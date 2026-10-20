@@ -1,57 +1,48 @@
-<div class="app-layout">
+<mat-sidenav-container class="container">
 
   <!-- Sidebar -->
-  <aside class="sidebar">
+  <mat-sidenav mode="side" opened class="sidebar">
 
-    <div class="app-brand">
-      <div class="brand-icon">M</div>
-      <h2>{{ title }}</h2>
-    </div>
+    <h2>{{ title }}</h2>
 
-    <div class="menu-label">MENU</div>
+    <mat-nav-list>
 
-    <nav class="navigation">
-      <a class="nav-item active">
-        <span class="material-symbols-rounded">home</span>
-        <span>Home</span>
+      <!-- Home -->
+      <a mat-list-item
+         routerLink="/"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+
+        <mat-icon matListItemIcon>home</mat-icon>
+        <span matListItemTitle>Home</span>
+
       </a>
-    </nav>
 
-  </aside>
+      <!-- Signal -->
+      <a mat-list-item
+         routerLink="/signal"
+         routerLinkActive="active">
+
+        <mat-icon matListItemIcon>bolt</mat-icon>
+        <span matListItemTitle>Signal</span>
+
+      </a>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
 
   <!-- Main Content -->
-  <main class="main-content">
+  <mat-sidenav-content>
 
-    <header class="top-bar">
-      <span>Dashboard / Home</span>
+    <mat-toolbar>
+      <span>My Angular App</span>
+    </mat-toolbar>
 
-      <div class="profile">
-        <span class="material-symbols-rounded">
-          person
-        </span>
-      </div>
-    </header>
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
 
-    <section class="page-content">
+  </mat-sidenav-content>
 
-      <h1>Home</h1>
-
-      <div class="welcome-card">
-        <div class="card-heading">
-          <span class="material-symbols-rounded">
-            home
-          </span>
-          <h2>Welcome back!</h2>
-        </div>
-
-        <p>
-          This is your Angular application
-          using Material Design 3.
-        </p>
-      </div>
-
-    </section>
-
-  </main>
-
-</div>
+</mat-sidenav-container>
