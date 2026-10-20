@@ -1,0 +1,36 @@
+h1 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+p {
+  color: #625b71;
+}
+
+.drag-area {
+  background: #f3edf7;
+  border-radius: 24px;
+  padding: 32px;
+  min-height: 350px;
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.drag-box {
+  width: 150px;
+  height: 100px;
+  background: #6750a4;
+  color: white;
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: move;
+  user-select: none;
+}
+
+.drag-box.cdk-drag-dragging {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
