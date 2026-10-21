@@ -1,0 +1,24 @@
+.elements-page {
+  padding: 24px;
+  max-width: 650px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+p {
+  color: #625b71;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+demo-welcome-card {
+  display: block;
+  margin-bottom: 24px;
+}
