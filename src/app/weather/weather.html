@@ -1,0 +1,54 @@
+
+<div class="weather-page">
+
+  <h1>Weather Dashboard</h1>
+  <p>Search for a city to view current weather.</p>
+
+  <!-- Search Form -->
+  <form class="search-form" (ngSubmit)="getWeather()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Enter city</mat-label>
+
+      <input
+        matInput
+        name="city"
+        [(ngModel)]="city"
+        required
+      >
+
+      <mat-icon matSuffix>location_on</mat-icon>
+    </mat-form-field>
+
+    <button mat-flat-button type="submit" [disabled]="loading()">
+      <mat-icon>search</mat-icon>
+      Search
+    </button>
+
+  </form>
+
+  <!-- Loading -->
+  @if (loading()) {
+    <div class="loading-container">
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>Loading weather...</p>
+    </div>
+  }
+
+  <!-- Error -->
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  <!-- Weather Result -->
+  @if (weather(); as w) {
+    <div class="weather-card">
+      <h2>{{ w.name }}</h2>
+      <h1>{{ w.main.temp }}°C</h1>
+      <p>{{ w.weather[0].description }}</p>
+      <p>Humidity: {{ w.main.humidity }}%</p>
+      <p>Wind: {{ w.wind.speed }} m/s</p>
+    </div>
+  }
+
+</div>
