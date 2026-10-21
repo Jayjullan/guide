@@ -4,6 +4,7 @@ import { Signal } from './signal/signal';
 import { Forms } from './forms/forms';
 import { DragDrop } from './drag-drop/drag-drop';
 import { Weather } from './weather/weather';
+import { Queries } from './queries/queries';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'forms', component: Forms },
   { path: 'drag-drop', component: DragDrop },
   { path: 'weather', component: Weather },
+  { path: 'queries', component: Queries },
 ];

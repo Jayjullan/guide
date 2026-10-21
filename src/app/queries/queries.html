@@ -1,0 +1,41 @@
+
+<div class="queries-page">
+
+  <h1>Angular Queries</h1>
+  <p>Learn how viewChild() works in Angular.</p>
+
+  <div class="query-card">
+
+    <h2>ViewChild Example</h2>
+
+    <p>
+      Click the button to focus or clear the input field.
+    </p>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your name</mat-label>
+
+      <input
+        matInput
+        #nameInput
+        placeholder="Type something..."
+      >
+    </mat-form-field>
+
+    <div class="button-group">
+
+      <button mat-flat-button (click)="focusInput()">
+        <mat-icon>edit</mat-icon>
+        Focus Input
+      </button>
+
+      <button mat-stroked-button (click)="clearInput()">
+        <mat-icon>delete</mat-icon>
+        Clear Input
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,54 @@
+
+.queries-page {
+  padding: 24px;
+}
+
+.queries-page h1 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.queries-page p {
+  color: #625b71;
+}
+
+.query-card {
+  background: #f3edf7;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 500px;
+  margin-top: 24px;
+}
+
+.query-card h2 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.button-group button {
+  height: 48px;
+  border-radius: 100px;
+}
+
+@media (max-width: 600px) {
+  .queries-page {
+    padding: 12px;
+  }
+
+  .query-card {
+    padding: 20px;
+  }
+}
