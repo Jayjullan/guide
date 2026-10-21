@@ -1,40 +1,79 @@
 
-<div class="queries-page">
+<div class="notes-page">
 
-  <h1>Angular Queries</h1>
-  <p>Learn how viewChild() works in Angular.</p>
+  <div class="page-header">
+    <mat-icon>edit_note</mat-icon>
+    <h1>Quick Notes</h1>
+  </div>
 
-  <div class="query-card">
+  <p class="subtitle">
+    Capture your thoughts and organize your tasks.
+  </p>
 
-    <h2>ViewChild Example</h2>
+  <!-- Add Note Card -->
+  <div class="note-form-card">
 
-    <p>
-      Click the button to focus or clear the input field.
-    </p>
+    <h2>Create a Note</h2>
 
     <mat-form-field appearance="outline">
-      <mat-label>Enter your name</mat-label>
+      <mat-label>New note</mat-label>
 
       <input
         matInput
-        #nameInput
-        placeholder="Type something..."
+        #noteInput
+        [(ngModel)]="newNote"
+        (keyup.enter)="addNote()"
+        placeholder="What would you like to remember?"
       >
     </mat-form-field>
 
     <div class="button-group">
 
-      <button mat-flat-button (click)="focusInput()">
-        <mat-icon>edit</mat-icon>
-        Focus Input
+      <button mat-stroked-button (click)="clearInput()">
+        <mat-icon>close</mat-icon>
+        Clear
       </button>
 
-      <button mat-stroked-button (click)="clearInput()">
-        <mat-icon>delete</mat-icon>
-        Clear Input
+      <button
+        mat-flat-button
+        (click)="addNote()"
+        [disabled]="!newNote.trim()">
+        <mat-icon>add</mat-icon>
+        Add Note
       </button>
 
     </div>
+
+  </div>
+
+  <!-- Notes List -->
+  <div class="notes-header">
+    <h2>My Notes</h2>
+    <span>{{ notes.length }} notes</span>
+  </div>
+
+  <div class="notes-list">
+
+    @for (note of notes; track $index) {
+      <div class="note-item">
+
+        <mat-icon>sticky_note_2</mat-icon>
+
+        <p>{{ note }}</p>
+
+        <button
+          mat-icon-button
+          aria-label="Delete note"
+          (click)="deleteNote($index)">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+      </div>
+    } @empty {
+      <p class="empty-message">
+        No notes yet. Create your first note!
+      </p>
+    }
 
   </div>
 
